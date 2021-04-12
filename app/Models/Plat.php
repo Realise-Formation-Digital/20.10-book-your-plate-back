@@ -15,7 +15,8 @@ class Plat extends Model
      * @var array
      */
     protected $fillable = [
-        'name',
+        'id',
+        'typeplat',
         'deliverydate',
         'description',
         'specialinfo',
@@ -23,5 +24,15 @@ class Plat extends Model
         'image',
     ];
 
-   
+    protected $hidden = [
+        'timestamps',
+        'created_at',
+        'updated_at',
+
+    ];
+
+    public function orders()
+    {
+        return $this->belongsToMany(Order::class);
+    }
 }

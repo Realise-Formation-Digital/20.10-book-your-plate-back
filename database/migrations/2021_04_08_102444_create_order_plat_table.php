@@ -14,8 +14,20 @@ class CreateOrderPlatTable extends Migration
     public function up()
     {
         Schema::create('order_plat', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+
+            $table->unsignedBigInteger('order_id');
+            $table->foreign('order_id')
+                ->references('id')
+                ->on('orders')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
+
+            $table->unsignedBigInteger('plat_id');
+            $table->foreign('plat_id')
+                ->references('id')
+                ->on('plats')
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
         });
     }
 

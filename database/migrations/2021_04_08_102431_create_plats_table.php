@@ -16,6 +16,12 @@ class CreatePlatsTable extends Migration
         Schema::create('plats', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('typeplat', 50);
+            $table->date('deliverydate');
+            $table->text('description', 500);
+            $table->text('specialinfo', 500);
+            $table->decimal('price', 4, 2);
+            $table->string('image', 255);
         });
     }
 
