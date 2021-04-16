@@ -22,7 +22,13 @@ class PlatFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'typeplat' => $this->faker->randomElement(['main', 'salad', 'dessert']),
+            //  'deliverydate' => $this->faker->dateTime()->format('d/m/Y'),
+            'deliverydate' => $this->faker->dateTime(),
+            'description' => $this->faker->text,
+            'specialinfo' => $this->faker->text,
+            'price' => $this->faker->numberBetween(3, 11),
+            'image' => $this->faker->image('public/assets/img'),
         ];
     }
 }

@@ -19,10 +19,11 @@ class Order extends Model
     'deliverydate',
     'quantity',
     'commentary',
+    'user_id',
   ];
 
   protected $hidden = [
-    'user_id',
+
     'timestamps',
     'created_at',
     'updated_at',

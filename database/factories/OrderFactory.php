@@ -22,7 +22,13 @@ class OrderFactory extends Factory
     public function definition()
     {
         return [
-            //
+
+            'deliverydate' => $this->faker->dateTime()->format('d/m/Y'),
+            'quantity' => $this->faker->numberBetween(1, 5),
+            'commentary' => $this->faker->text,
+
+
+
         ];
     }
 }

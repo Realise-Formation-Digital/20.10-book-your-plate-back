@@ -15,7 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->date('deliverydate');
+            $table->dateTime('deliverydate');
             $table->unsignedTinyInteger('quantity');
             $table->text('commentary', 2000);
             $table->timestamps();
@@ -26,7 +26,6 @@ class CreateOrdersTable extends Migration
                 ->on('users')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
-                
         });
     }
 
