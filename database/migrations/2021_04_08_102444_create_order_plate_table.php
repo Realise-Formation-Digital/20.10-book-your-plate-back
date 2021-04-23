@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOrderPlatTable extends Migration
+class CreateOrderPlateTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateOrderPlatTable extends Migration
      */
     public function up()
     {
-        Schema::create('order_plat', function (Blueprint $table) {
+        Schema::create('order_plate', function (Blueprint $table) {
 
             $table->unsignedBigInteger('order_id');
             $table->foreign('order_id')
@@ -22,10 +22,10 @@ class CreateOrderPlatTable extends Migration
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
 
-            $table->unsignedBigInteger('plat_id');
-            $table->foreign('plat_id')
+            $table->unsignedBigInteger('plate_id');
+            $table->foreign('plate_id')
                 ->references('id')
-                ->on('plats')
+                ->on('plates')
                 ->onDelete('restrict')
                 ->onUpdate('restrict');
         });
@@ -38,6 +38,6 @@ class CreateOrderPlatTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('order_plat');
+        Schema::dropIfExists('order_plate');
     }
 }

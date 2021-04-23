@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 
 
-class Plat extends Model
+class Plate extends Model
 {
     use HasFactory;
 
@@ -18,8 +18,8 @@ class Plat extends Model
      */
     protected $fillable = [
         'id',
-        'typeplat',
-        'deliverydate',
+        'plateType',
+        'deliveryDate',
         'description',
         'specialinfo',
         'price',

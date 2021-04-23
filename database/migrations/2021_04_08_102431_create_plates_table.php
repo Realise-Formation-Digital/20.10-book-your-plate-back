@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePlatsTable extends Migration
+class CreatePlatesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreatePlatsTable extends Migration
      */
     public function up()
     {
-        Schema::create('plats', function (Blueprint $table) {
+        Schema::create('plates', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('typeplat', 50);
-            $table->dateTime('deliverydate');
+            $table->string('plateType', 50);
+            $table->dateTime('deliveryDate');
             $table->text('description', 500);
             $table->text('specialinfo', 500);
             $table->decimal('price', 4, 2);
@@ -32,6 +32,6 @@ class CreatePlatsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('plats');
+        Schema::dropIfExists('plates');
     }
 }
