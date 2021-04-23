@@ -21,7 +21,7 @@ class CreatePlatesTable extends Migration
             $table->text('description', 500);
             $table->text('specialinfo', 500);
             $table->decimal('price', 4, 2);
-            $table->string('image', 255);
+            $table->string('image', 255)->nullable();
         });
     }
 
