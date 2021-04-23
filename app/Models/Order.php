@@ -16,10 +16,12 @@ class Order extends Model
    */
   protected $fillable = [
     'id',
-    'deliverydate',
+    'deliveryDate',
     'quantity',
     'commentary',
-    'user_id',
+    'userID',
+    'plateID',
+    'timeStamp'
   ];
 
   protected $hidden = [
@@ -30,10 +32,10 @@ class Order extends Model
 
   ];
 
-  public function user()
+/*   public function user()
   {
     return $this->belongsTo(User::class);
-  }
+  } */
 
   public function plats()
   {
