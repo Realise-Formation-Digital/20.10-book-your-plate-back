@@ -21,6 +21,6 @@ Route::apiResource('users', UserController::class);
 Route::post('users', 'UserController@store');
 
 Route::apiResource('plates', PlateController::class);
-Route::post('plates', 'PlateController@store');
+//Route::post('plates', 'PlateController@store');
 
 Route::apiResource('orders', OrderController::class);
